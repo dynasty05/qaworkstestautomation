@@ -7,28 +7,68 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 6,
-  "name": "Valid Submission",
+  "comments": [
+    {
+      "line": 6,
+      "value": "#  Scenario Outline: Valid Submission"
+    },
+    {
+      "line": 7,
+      "value": "#    Given I am on the QAWorks Site"
+    },
+    {
+      "line": 8,
+      "value": "#    Then I should be able to contact QAWorks with the following information \"\u003cname\u003e\" \"\u003cemail\u003e\" \"\u003csubject\u003e\" \"\u003cmessage\u003e\""
+    },
+    {
+      "line": 9,
+      "value": "#"
+    },
+    {
+      "line": 10,
+      "value": "#    Examples:"
+    },
+    {
+      "line": 11,
+      "value": "#      | name      | email      | subject   | message                |"
+    },
+    {
+      "line": 12,
+      "value": "#      | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |"
+    }
+  ],
+  "line": 15,
+  "name": "Incomplete form submission",
   "description": "",
-  "id": "contact-us-page;valid-submission",
+  "id": "contact-us-page;incomplete-form-submission",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 7,
+  "line": 16,
   "name": "I am on the QAWorks Site",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "I should be able to contact QAWorks with the following information \"\u003cname\u003e\" \"\u003cemail\u003e\" \"\u003csubject\u003e\" \"\u003cmessage\u003e\"",
+  "line": 17,
+  "name": "I omit one of the following information on the form \"\u003cname\u003e\" \"\u003cemail\u003e\" \"\u003csubject\u003e\" \"\u003cmessage\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 18,
+  "name": "I submit the form",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see an error message",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 10,
+  "line": 21,
   "name": "",
   "description": "",
-  "id": "contact-us-page;valid-submission;",
+  "id": "contact-us-page;incomplete-form-submission;",
   "rows": [
     {
       "cells": [
@@ -37,84 +77,108 @@ formatter.examples({
         "subject",
         "message"
       ],
-      "line": 11,
-      "id": "contact-us-page;valid-submission;;1"
+      "line": 22,
+      "id": "contact-us-page;incomplete-form-submission;;1"
     },
     {
       "cells": [
-        "j.Bloggs",
+        "",
         "j.Bloggs@qaworks.com",
         "test automation",
         "please contact me I want to find out more"
       ],
-      "line": 12,
-      "id": "contact-us-page;valid-submission;;2"
+      "line": 23,
+      "id": "contact-us-page;incomplete-form-submission;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 2575177251,
+  "duration": 2512540023,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 12,
-  "name": "Valid Submission",
+  "line": 23,
+  "name": "Incomplete form submission",
   "description": "",
-  "id": "contact-us-page;valid-submission;;2",
+  "id": "contact-us-page;incomplete-form-submission;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 7,
+  "line": 16,
   "name": "I am on the QAWorks Site",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "I should be able to contact QAWorks with the following information \"j.Bloggs\" \"j.Bloggs@qaworks.com\" \"test automation\" \"please contact me I want to find out more\"",
+  "line": 17,
+  "name": "I omit one of the following information on the form \"\" \"j.Bloggs@qaworks.com\" \"test automation\" \"please contact me I want to find out more\"",
   "matchedColumns": [
     0,
     1,
     2,
     3
   ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 18,
+  "name": "I submit the form",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see an error message",
   "keyword": "Then "
 });
 formatter.match({
   "location": "ContactUs.i_am_on_the_QAWorks_Site()"
 });
 formatter.result({
-  "duration": 7101328877,
+  "duration": 7420976049,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "j.Bloggs",
-      "offset": 68
+      "val": "",
+      "offset": 53
     },
     {
       "val": "j.Bloggs@qaworks.com",
-      "offset": 79
+      "offset": 56
     },
     {
       "val": "test automation",
-      "offset": 102
+      "offset": 79
     },
     {
       "val": "please contact me I want to find out more",
-      "offset": 120
+      "offset": 97
     }
   ],
-  "location": "ContactUs.i_should_be_able_to_contact_QAWorks_with_the_following_information(String,String,String,String)"
+  "location": "ContactUs.i_omit_one_of_the_following_information_on_the_form(String,String,String,String)"
 });
 formatter.result({
-  "duration": 2438712270,
+  "duration": 2092625878,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUs.i_submit_the_form()"
+});
+formatter.result({
+  "duration": 67934120,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUs.i_should_see_an_error_message()"
+});
+formatter.result({
+  "duration": 331214714,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1010921,
+  "duration": 598552746,
   "status": "passed"
 });
 });

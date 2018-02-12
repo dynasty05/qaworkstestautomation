@@ -46,7 +46,7 @@ public class ContactUsPage {
      * Submit the information entered into
      * the 'Get In Touch' form.
      */
-    public void submit() {
+    public void submitForm() {
         submitInfoButton.click();
     }
 }

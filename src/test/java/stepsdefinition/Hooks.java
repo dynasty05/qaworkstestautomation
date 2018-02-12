@@ -66,7 +66,7 @@ public class Hooks {
         }
 
         // close the browser
-//        driver.quit();
+        driver.quit();
 
     }
 

@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 2575177251,
+              "duration": 2512540023,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 12,
-        "name": "Valid Submission",
+        "line": 23,
+        "name": "Incomplete form submission",
         "description": "",
-        "id": "contact-us-page;valid-submission;;2",
+        "id": "contact-us-page;incomplete-form-submission;;2",
         "after": [
           {
             "result": {
-              "duration": 1010921,
+              "duration": 598552746,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 7101328877,
+              "duration": 7420976049,
               "status": "passed"
             },
-            "line": 7,
+            "line": 16,
             "name": "I am on the QAWorks Site",
             "match": {
               "location": "ContactUs.i_am_on_the_QAWorks_Site()"
@@ -46,31 +46,31 @@
           },
           {
             "result": {
-              "duration": 2438712270,
+              "duration": 2092625878,
               "status": "passed"
             },
-            "line": 8,
-            "name": "I should be able to contact QAWorks with the following information \"j.Bloggs\" \"j.Bloggs@qaworks.com\" \"test automation\" \"please contact me I want to find out more\"",
+            "line": 17,
+            "name": "I omit one of the following information on the form \"\" \"j.Bloggs@qaworks.com\" \"test automation\" \"please contact me I want to find out more\"",
             "match": {
               "arguments": [
                 {
-                  "val": "j.Bloggs",
-                  "offset": 68
+                  "val": "",
+                  "offset": 53
                 },
                 {
                   "val": "j.Bloggs@qaworks.com",
-                  "offset": 79
+                  "offset": 56
                 },
                 {
                   "val": "test automation",
-                  "offset": 102
+                  "offset": 79
                 },
                 {
                   "val": "please contact me I want to find out more",
-                  "offset": 120
+                  "offset": 97
                 }
               ],
-              "location": "ContactUs.i_should_be_able_to_contact_QAWorks_with_the_following_information(String,String,String,String)"
+              "location": "ContactUs.i_omit_one_of_the_following_information_on_the_form(String,String,String,String)"
             },
             "matchedColumns": [
               0,
@@ -78,6 +78,30 @@
               2,
               3
             ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 67934120,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I submit the form",
+            "match": {
+              "location": "ContactUs.i_submit_the_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 331214714,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I should see an error message",
+            "match": {
+              "location": "ContactUs.i_should_see_an_error_message()"
+            },
             "keyword": "Then "
           }
         ]
