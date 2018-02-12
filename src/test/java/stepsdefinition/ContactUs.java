@@ -136,10 +136,9 @@ public class ContactUs {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("wpcf7-response-output.wpcf7-display-none")));
 
-//       assertNotNull(driver.findElement(By.className("close toggle-alert")));
-
         // Verify error message is displayed
-        System.out.println("Validation error displayed");
+        assertTrue(driver.getPageSource().contains("The field is required"));
+        //       assertNotNull(driver.findElement(By.className("close toggle-alert")));
 
     }
 

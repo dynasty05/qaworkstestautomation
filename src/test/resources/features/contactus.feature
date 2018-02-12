@@ -25,18 +25,18 @@ Feature: Contact Us Page
       And I open Contact Us Page
       Then I should be able to email QA Works using the email button
 
-#  Scenario Outline: Incomplete form submission
-#    Given I am on the QAWorks Site
-#    When I omit one of the following information on the form "<name>" "<email>" "<subject>" "<message>"
-#    And I submit the form
-#    Then I should see an error message
-#
-#    Examples:
-#      | name      | email      | subject   | message           |
-#      |       | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
-#      | j.Bloggs      |       | test automation   | please contact me I want to find out more   |
-#      | j.Bloggs      | j.Bloggs@qaworks.com      |    | please contact me I want to find out more   |
-#      | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   |    |
+  Scenario Outline: Incomplete form submission
+    Given I am on the QAWorks Site
+    When I omit one of the following information on the form "<name>" "<email>" "<subject>" "<message>"
+    And I submit the form
+    Then I should see an error message
+
+    Examples:
+      | name      | email      | subject   | message           |
+      |       | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
+      | j.Bloggs      |       | test automation   | please contact me I want to find out more   |
+      | j.Bloggs      | j.Bloggs@qaworks.com      |    | please contact me I want to find out more   |
+      | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   |    |
 
 
 #  Scenario: Email Address Too Long
