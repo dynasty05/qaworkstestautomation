@@ -12,16 +12,16 @@ Feature: Contact Us Page
       | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
 
 
-  Scenario Outline: Incomplete form submission
-    Given I am on the QAWorks Site
-    When I omit one of the following information on the form "<name>" "<email>" "<subject>" "<message>"
-    And I submit the form
-    Then I should see an error message
-
-    Examples:
-      | name      | email      | subject   | message           |
-      |       | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
-      | j.Bloggs      |       | test automation   | please contact me I want to find out more   |
+#  Scenario Outline: Incomplete form submission
+#    Given I am on the QAWorks Site
+#    When I omit one of the following information on the form "<name>" "<email>" "<subject>" "<message>"
+#    And I submit the form
+#    Then I should see an error message
+#
+#    Examples:
+#      | name      | email      | subject   | message           |
+#      |       | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
+#      | j.Bloggs      |       | test automation   | please contact me I want to find out more   |
 #      | j.Bloggs      | j.Bloggs@qaworks.com      |    | please contact me I want to find out more   |
 #      | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   |    |
 
@@ -30,7 +30,7 @@ Feature: Contact Us Page
 #    Given I am on the QAWorks Site
 #    And I open Contact Us Page
 #    When I enter an invalid email address
-#    Then I should see an error message
+#    Then I should see an email error message
 #
 #  Scenario: Email Address Too Long
 #    Given I am on the QAWorks Site

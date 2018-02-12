@@ -38,6 +38,34 @@ public class ContactUs {
         assertEquals(expectedTitle, driver.getTitle());
     }
 
+    @Given("^I open Contact Us Page$")
+    public void i_open_Contact_Us_Page() throws Throwable {
+        goToContactUs();
+    }
+
+    @When("^I enter an invalid email address$")
+    public void i_enter_an_invalid_email_address() throws Throwable {
+        // get a ContactUS page object
+        contactUsPage = new ContactUsPage(driver);
+
+        // enter the form fields
+        contactUsPage.enterName("Joe Bloggs");
+        contactUsPage.enterEmail("invalid email");
+        contactUsPage.enterSubject("Test Subject");
+        contactUsPage.enterMessage("Some test message");
+
+        // submit the form
+        contactUsPage.submitForm();
+    }
+
+    @Then("^I should see an email error message$")
+    public void i_should_see_an_email_error_message() throws Throwable {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("wpcf7-not-valid-tip")));
+
+
+    }
+
     @Then("^I should be able to contact QAWorks with the following information \"(.*?)\" \"(.*?)\" \"(.*?)\" \"(.*?)\"$")
     public void i_should_be_able_to_contact_QAWorks_with_the_following_information(String name, String email,
                                                                                    String subject, String message)
