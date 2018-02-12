@@ -16,16 +16,12 @@ import java.util.concurrent.TimeUnit;
  * Created by ribake on 11/02/2018.
  */
 public class Hooks {
-    public static final WebDriver driver;
+    public static WebDriver driver;
 
     // Set everything that is needed when this class loads.
     static {
-        driver = new ChromeDriver();
         // Set other browser executables
-         System.setProperty("webdriver.chrome.driver", "~/Installations/chromedriver");
-
-        // Set default Pageload timeout of 10 seconds
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+         System.setProperty("webdriver.chrome.driver", "/Users/user/Installations/chromedriver");
     }
 
 
@@ -35,7 +31,11 @@ public class Hooks {
      * Deletes all browser cookies present in browser
      */
     public void before(){
+        driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
+        // Set default Pageload timeout of 10 seconds
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
     }
 
 

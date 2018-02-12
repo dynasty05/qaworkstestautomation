@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by ribake on 11/02/2018.
+ * Steps definition for contactus.feature
  */
 public class ContactUs {
     private WebDriver driver;
@@ -63,8 +64,26 @@ public class ContactUs {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("wpcf7-not-valid-tip")));
 
+        assertTrue(driver.getPageSource().contains("The e-mail address entered is invalid."));
 
     }
+
+    @Then("^I should be able to email QA Works using the email button$")
+    public void i_should_be_able_to_email_QA_Works_using_the_email_button() throws Throwable {
+        contactUsPage = new ContactUsPage(driver);
+
+        // inspect the mailto attribute of the button
+        String outerHTML = driver.findElement(By.linkText("EMAIL US")).getAttribute("outerHTML");
+
+        try{
+            // if no failures then click the button
+            assertTrue(outerHTML.contains("qaworks.com"));
+            contactUsPage.sendEmail();
+        } catch (Throwable t) {
+            throw t;
+        }
+    }
+
 
     @Then("^I should be able to contact QAWorks with the following information \"(.*?)\" \"(.*?)\" \"(.*?)\" \"(.*?)\"$")
     public void i_should_be_able_to_contact_QAWorks_with_the_following_information(String name, String email,

@@ -12,6 +12,19 @@ Feature: Contact Us Page
       | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   | please contact me I want to find out more   |
 
 
+
+  Scenario: Invalid Email Address
+    Given I am on the QAWorks Site
+    And I open Contact Us Page
+    When I enter an invalid email address
+    Then I should see an email error message
+
+
+  Scenario: Email QA Works
+      Given I am on the QAWorks Site
+      And I open Contact Us Page
+      Then I should be able to email QA Works using the email button
+
 #  Scenario Outline: Incomplete form submission
 #    Given I am on the QAWorks Site
 #    When I omit one of the following information on the form "<name>" "<email>" "<subject>" "<message>"
@@ -26,12 +39,6 @@ Feature: Contact Us Page
 #      | j.Bloggs      | j.Bloggs@qaworks.com      | test automation   |    |
 
 
-#  Scenario: Invalid Email Address
-#    Given I am on the QAWorks Site
-#    And I open Contact Us Page
-#    When I enter an invalid email address
-#    Then I should see an email error message
-#
 #  Scenario: Email Address Too Long
 #    Given I am on the QAWorks Site
 #    And I open Contact Us Page
@@ -43,14 +50,6 @@ Feature: Contact Us Page
 #    And I open Contact Us Page
 #    When I enter an email address over 254 characters
 #    Then I should see an error message
-#
-#  Scenario: Email QA Works
-#      Given I am on the QAWorks Site
-#      And I open Contact Us Page
-#      When I click on the Email button
-#      Then I should be able to compose an email to info@qaworks.com
-##    Bug in mailto address
-#
 #
 #  Scenario: Call QA Works
 #    Given I am on the QAWorks Site

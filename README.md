@@ -6,7 +6,7 @@ REQUIREMENTS
 2.) Maven (version 3+). For installation and configuration instructions see https://maven.apache.org/install.html for
     installation instructions for your platform
 3.) Chromedriver executable (version 2.33). Download from http://chromedriver.storage.googleapis.com/index.html, and
-    into your home drive.
+    into the following location folder /Users/user/Installations/.
 
 4.) An IDE (prefrrably IntelliJ IDE)
 PLATFROM LIMITATIONS
@@ -30,6 +30,8 @@ From Command Line:
 2.) Go into the directory ContactUsTestAutomation
 3.) Issue mvn test
 
+
 BUGS FOUND
 ==========
 1.) Error message on form when valid details are submitted
+2.) The mailto address of Email button is wrong (mails to a non-qaworks.com domain)

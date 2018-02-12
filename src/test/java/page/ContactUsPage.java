@@ -49,4 +49,9 @@ public class ContactUsPage {
     public void submitForm() {
         submitInfoButton.click();
     }
+
+    // Clicks on the send email button
+    public void sendEmail() {
+        driver.findElement(By.linkText("EMAIL US")).click();
+    }
 }
