@@ -31,6 +31,7 @@ public class Hooks {
      * Deletes all browser cookies present in browser
      */
     public void before(){
+        // instantiate new WebDriver for new Scenario
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         // Set default Pageload timeout of 10 seconds
@@ -65,7 +66,7 @@ public class Hooks {
             System.out.println("Scenario "+ scenario.getName() + "passed");
         }
 
-        // close the browser
+        // close the browser after current Scenario
         driver.quit();
 
     }
